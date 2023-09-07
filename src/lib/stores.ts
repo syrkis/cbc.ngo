@@ -21,7 +21,7 @@ export const langs = {
 };
 
 // the store holding the current language, initially 'en'
-export const language = writable<string>('en');
+export const language = writable<string>(navigator.language.startsWith('pt') ? 'pt' : 'en');
 
 // derived dictionary store holding the translations for the current language
 export const dictionary = derived(language, ($language) => langs[$language], {});
