@@ -1,10 +1,7 @@
 <script lang='ts'>
-    import { _, locale, dictionary } from 'svelte-i18n';
     import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
-
-    let language = 'en'; // get from dev
-    $: locale.set(language);
+    import { writable, derived } from 'svelte/store';
 
     let langs = {
         'en': {
@@ -25,28 +22,35 @@
         }
     };
 
-    $: {
-        dictionary.set(langs);
-        locale.set(language);
-    }
+    // Writable store that will hold the current language selection
+    const language = writable('en');
 
-    function setLang(lang) {
-        language = lang;
-        locale.set(language);
-    }
+    // Derived store that will automatically update the dictionary whenever language changes
+    const dictionary = derived(language, ($language) => langs[$language]);
 
-    let sites: string[] = ['about', 'projects', 'publications', 'contact'];
-    let isTop = false;
+    const setLang = (lang: string) => {
+        language.set(lang);
+    };
+
+    let sites = ['about', 'projects', 'publications', 'contact'];
 
     $: isTop = $page.route.id === '/';
 </script>
 
+<svelte:head>
+    <!-- Whenever language changes, we set the new language as the html lang attribute -->
+    <script>
+        language.subscribe(value => document.documentElement.lang = value);
+    </script>
+</svelte:head>
+
+
     <div class="container" class:hide={!isTop}>
         <div class="main">
             <div class="tagline">
-                <h1>{$_('title')}</h1>
+                <h1>{$dictionary['title']}</h1>
                 <span>
-                    {$_('tagline')}
+                    {$dictionary['tagline']}
                 </span>
             </div>
             <a href="/about">
@@ -57,18 +61,16 @@
         </div>
     </div>
 
-<div class="language-switcher" class:bottom-black={!isTop}>
-    <a href="#" on:click={() => setLang('en')}>EN</a>
-    |
-    <a href="#" on:click={() => setLang('pt')}>PT</a>
-</div>
-
+    <div class="language-switcher">
+        <a href="#" on:click|preventDefault={() => setLang('en')}>EN</a> |
+        <a href="#" on:click|preventDefault={() => setLang('pt')}>PT</a>
+    </div>
 
 <div class="nav-bg" class:top={!isTop}>
     <div class="nav">
         <div class="nav__links">
             {#each sites as site, i}
-                <a href="/{site.toLowerCase()}">{$_(site)}</a>
+                <a href="/{site}">{$dictionary[site]}</a>
                 {#if i < sites.length - 1}
                     <span class="separator">|</span>
                 {/if}
