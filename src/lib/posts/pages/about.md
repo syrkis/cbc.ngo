@@ -1,4 +1,5 @@
 ---
+slug: about
 title_en: Center for Brazilian Climate
 body_en: |
   ## About CentroClima
@@ -8,7 +9,7 @@ body_en: |
   Established in 2000, our dedicated team of scientists, engineers, and policymakers has been at the forefront of environmental innovation, pioneering strategies that help communities adapt to changing climates and reshape their futures in a sustainable way.
 
   Our belief is that knowledge is power; hence, we are committed to empowering individuals, communities, and governments with the information and tools they need to make informed decisions about climate action.
-title_pt: Centro Brasil no Clima
+title_pt: Centro Brasil no
 body_pt: |
   ## Sobre CentroClima
 
