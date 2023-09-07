@@ -1,23 +1,9 @@
 <script lang='ts'>
     import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
-    import VanillaTilt from "vanilla-tilt";
-    import { onMount } from "svelte";
-
 
     let sites: string[] = ['About', 'Projects', 'Press', 'Contact'];
     let isTop = false;
-
-    onMount(() => {
-        VanillaTilt.init(document.querySelectorAll(".logo"), {
-            max: 20,
-            speed: 1000,
-            reverse: true,
-            scale: 1,
-            "full-page-listening": true,
-        });
-    });
-
 
     $: isTop = $page.route.id === '/';
 </script>
