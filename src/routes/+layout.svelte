@@ -1,17 +1,37 @@
 <script>
-    import Header from '$lib/comps/Header.svelte';
-    import { page } from '$app/stores';
+    import Header from "$lib/comps/Header.svelte";
+    import { onMount, beforeUpdate } from "svelte";
+    import { goto } from "$app/navigation";
+    import { page } from "$app/stores";
 
     let isTop = false;
 
     $: {
-        isTop = $page.route.id === '/';
+        isTop = $page.route.id === "/";
     }
+
+    let contentElement;
+
+    beforeUpdate(() => {
+        const handleScroll = (e) => {
+            if(contentElement.scrollTop <= 0 && $page.route.id !== "/") {
+                goto("/");
+            }
+        };
+
+        if (contentElement) {
+            contentElement.addEventListener("wheel", handleScroll);
+
+            return () => {
+                if(contentElement) contentElement.removeEventListener("wheel", handleScroll);
+            };
+        }
+    });
 </script>
 
 <div>
     <Header />
-    <div class='content' class:slide-up={!isTop}>
+    <div class="content" bind:this={contentElement} class:slide-up={!isTop}>
         <slot></slot>
     </div>
 </div>
