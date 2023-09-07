@@ -8,14 +8,15 @@
     let isTop = false;
 
     $: {
-        isTop = $page.route.id === "/";
+        isTop = $page.route.id === "/" || $page.route.id === "/pt";
     }
 
     let contentElement;
 
     beforeUpdate(() => {
         const handleScroll = (e) => {
-            if(contentElement.scrollTop <= 0 && $page.route.id !== "/") {
+            /** test we are not in home page, and that we have exactly one slash in page route id*/
+            if(contentElement.scrollTop <= 0 && $page.route.id !== "/" && $page.route.id.split("/").length === 2) {
                 goto("/");
             }
         };
@@ -46,6 +47,7 @@
         position: absolute;
         width: 100%;
         transition: transform 0.5s ease-in-out; /* Add this transition */
+        font-family: 'Cabin', sans-serif;
     }
 
     :global(.page1) {

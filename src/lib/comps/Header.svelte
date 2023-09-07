@@ -1,20 +1,52 @@
 <script lang='ts'>
+    import { _, locale, dictionary } from 'svelte-i18n';
     import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
 
-    let sites: string[] = ['About', 'Projects', 'Publications', 'Contact'];
+    let language = 'en'; // get from dev
+    $: locale.set(language);
+
+    let langs = {
+        'en': {
+            title: 'Center for Brazilian Climate',
+            about: 'About',
+            projects: 'Projects',
+            publications: 'Publications',
+            contact: 'Contact',
+            tagline: 'We foster informed dialogues and create strategic plans to combat climate change in Brazil through policy advocacy and community engagement.'
+        },
+        'pt': {
+            title: 'Centro Brasil no Clima',
+            about: 'Sobre',
+            projects: 'Projetos',
+            publications: 'Publicações',
+            contact: 'Contacto',
+            tagline: 'Estimulamos debates esclarecidos e criamos planos para combater as mudanças climáticas no Brasil via defesa política e interação comunitária.'
+        }
+    };
+
+    $: {
+        dictionary.set(langs);
+        locale.set(language);
+    }
+
+    function setLang(lang) {
+        language = lang;
+        locale.set(language);
+    }
+
+    let sites: string[] = ['about', 'projects', 'publications', 'contact'];
     let isTop = false;
 
     $: isTop = $page.route.id === '/';
 </script>
 
-
     <div class="container" class:hide={!isTop}>
         <div class="main">
             <div class="tagline">
-                <h1>Center for Brazilian Climate</h1>
+                <h1>{$_('title')}</h1>
                 <span>
-                    We foster informed dialogues and create strategic plans to combat climate change in Brazil through policy advocacy and community engagement.
+                    {$_('tagline')}
                 </span>
             </div>
             <a href="/about">
@@ -26,7 +58,9 @@
     </div>
 
 <div class="language-switcher" class:bottom-black={!isTop}>
-    <a href="#" data-lang="en">en</a> | <a href="#" data-lang="pt">pt</a>
+    <a href="#" on:click={() => setLang('en')}>EN</a>
+    |
+    <a href="#" on:click={() => setLang('pt')}>PT</a>
 </div>
 
 
@@ -34,7 +68,7 @@
     <div class="nav">
         <div class="nav__links">
             {#each sites as site, i}
-                <a href="/{site.toLowerCase()}">{site}</a>
+                <a href="/{site.toLowerCase()}">{$_(site)}</a>
                 {#if i < sites.length - 1}
                     <span class="separator">|</span>
                 {/if}

@@ -1,16 +1,28 @@
-backend: {name: git-gateway, branch: main, repo: syrkis/cbc.ngo, site_domain: cbc.ngo}
+backend: 
+  name: git-gateway
+  branch: main
+  repo: syrkis/cbc.ngo
+  site_domain: cbc.ngo
 media_folder: static/images
 public_folder: /images
 collections:
-  - {name: "projects", label: "Projects", folder: "src/lib/posts/projects", create: true, slug: "{{slug}}",
-    fields: 
+  - name: "projects"
+    label: "Projects"
+    folder: "src/lib/posts/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
       - {name: "slug", label: "Slug", widget: "string"}
       - {name: "title", label: "Title", widget: "string"}
       - {name: "description_en", label: "Description (English)", widget: "markdown"}
       - {name: "description_pt", label: "Description (Portuguese)", widget: "markdown"}
       - {name: "review", label: "Review", widget: "markdown"}
-  }
-  - {name: "publications", label: "Publications", folder: "src/lib/posts/publications", create: true, slug: "{{slug}}", 
+  
+  - name: "publications"
+    label: "Publications"
+    folder: "src/lib/posts/publications"
+    create: true
+    slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
       - {name: "title", label: "Title", widget: "string"}
@@ -18,11 +30,14 @@ collections:
       - {name: "abstract_pt", label: "Abstract (Portuguese)", widget: "markdown"}
       - {name: "publication_date", label: "Publication Date", widget: "datetime"}
       - {name: "published", label: "Published", widget: "boolean", default: true}
-  }
-  - {name: "pages", label: "Pages", folder: "src/lib/posts/pages", create: true, slug: "{{slug}}", 
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/lib/posts/pages"
+    create: true
+    slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
       - {name: "title", label: "Title", widget: "string"}
       - {name: "body_en", label: "Body (English)", widget: "markdown"}
       - {name: "body_pt", label: "Body (Portuguese)", widget: "markdown"}
-  }

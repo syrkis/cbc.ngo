@@ -1,18 +1,19 @@
 <script lang='ts'>
-    import Post from '$lib/comps/Post.svelte';
-    /** this is the /about page. We will get the page content from /api/pages/about */
     import type { Page } from '$lib/types';
+    import { page } from '$app/stores';
     import { onMount } from 'svelte';
 
     export let pageData = {} as Page;
+    
+    let slug: string;
+    $: slug = $page.params.slug;
 
     onMount(async () => {
-        const res = await fetch('/api/pages/about');
+        const res = await fetch(`/api/publications/${slug}`);
         pageData = await res.json();
     });
-
 </script>
 
 <div class="page1">
-    <Post content={pageData} />
+    <h1>{JSON.stringify(pageData)}</h1>
 </div>
