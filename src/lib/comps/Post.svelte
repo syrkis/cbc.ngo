@@ -1,11 +1,11 @@
 <script>
-    import { page } from '$app/stores';
+    import { language } from '$lib/stores';
     export let content;
 </script>
 
 <div class="container">
     <div class="content">
-        {JSON.stringify($page.route.id)}
+        Current language: {$language} <br>
         {JSON.stringify(content)}
     </div>
 </div>

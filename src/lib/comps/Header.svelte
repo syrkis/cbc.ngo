@@ -1,36 +1,7 @@
 <script lang='ts'>
     import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
-    import { writable, derived } from 'svelte/store';
-
-    let langs = {
-        'en': {
-            title: 'Center for Brazilian Climate',
-            about: 'About',
-            projects: 'Projects',
-            publications: 'Publications',
-            contact: 'Contact',
-            tagline: 'We foster informed dialogues and create strategic plans to combat climate change in Brazil through policy advocacy and community engagement.'
-        },
-        'pt': {
-            title: 'Centro Brasil no Clima',
-            about: 'Sobre',
-            projects: 'Projetos',
-            publications: 'Publicações',
-            contact: 'Contacto',
-            tagline: 'Estimulamos debates esclarecidos e criamos planos para combater as mudanças climáticas no Brasil via defesa política e interação comunitária.'
-        }
-    };
-
-    // Writable store that will hold the current language selection
-    const language = writable('en');
-
-    // Derived store that will automatically update the dictionary whenever language changes
-    const dictionary = derived(language, ($language) => langs[$language]);
-
-    const setLang = (lang: string) => {
-        language.set(lang);
-    };
+    import { language, dictionary, setLang } from '$lib/stores';
 
     let sites = ['about', 'projects', 'publications', 'contact'];
 
@@ -61,7 +32,7 @@
         </div>
     </div>
 
-    <div class="language-switcher">
+    <div class="language-switcher" class:bottom-black={!isTop}>
         <a href="#" on:click|preventDefault={() => setLang('en')}>EN</a> |
         <a href="#" on:click|preventDefault={() => setLang('pt')}>PT</a>
     </div>
