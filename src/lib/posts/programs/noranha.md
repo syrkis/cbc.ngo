@@ -1,6 +1,7 @@
 ---
-slug: anna
-title: Center for Brazilian Climate
+slug: noranha
+cover: /images/projects/noranha.jpg
+title_en: Noranha Around the World
 body_en: |
   ## About CentroClima
 
@@ -10,6 +11,7 @@ body_en: |
 
   Our belief is that knowledge is power; hence, we are committed to empowering individuals, communities, and governments with the information and tools they need to make informed decisions about climate action.
 
+title_pt: Noranha Pelo Planeta
 body_pt: |
   ## Sobre CentroClima
 

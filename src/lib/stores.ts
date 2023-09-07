@@ -5,7 +5,7 @@ export const langs = {
     'en': {
         title: 'Center for Brazilian Climate',
         about: 'About',
-        projects: 'Projects',
+        programs: 'Programs',
         publications: 'Publications',
         contact: 'Contact',
         tagline: 'We foster informed dialogues and create strategic plans to combat climate change in Brazil through policy advocacy and community engagement.'
@@ -13,7 +13,7 @@ export const langs = {
     'pt': {
         title: 'Centro Brasil no Clima',
         about: 'Sobre',
-        projects: 'Projetos',
+        programs: 'Programas',
         publications: 'Publicações',
         contact: 'Contacto',
         tagline: 'Estimulamos debates esclarecidos e criamos planos para combater as mudanças climáticas no Brasil via defesa política e interação comunitária.'

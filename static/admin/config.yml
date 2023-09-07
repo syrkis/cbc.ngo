@@ -6,17 +6,17 @@ backend:
 media_folder: static/images
 public_folder: /images
 collections:
-  - name: "projects"
-    label: "Projects"
-    folder: "src/lib/posts/projects"
+  - name: "programs"
+    label: "Programs"
+    folder: "src/lib/posts/programs"
     create: true
     slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
-      - {name: "title", label: "Title", widget: "string"}
+      - {namke: "title_en", label: "Title (English)", widget: "string"}
+      - {name: "title_pt", label: "Title (Portuguese)", widget: "string"}
       - {name: "description_en", label: "Description (English)", widget: "markdown"}
       - {name: "description_pt", label: "Description (Portuguese)", widget: "markdown"}
-      - {name: "review", label: "Review", widget: "markdown"}
   
   - name: "publications"
     label: "Publications"
@@ -25,11 +25,14 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
-      - {name: "title", label: "Title", widget: "string"}
+      - {name: "title_en", label: "Title (English)", widget: "string"}
+      - {name: "title_pt", label: "Title (Portuguese)", widget: "string"}
       - {name: "abstract_en", label: "Abstract (English)", widget: "markdown"}
       - {name: "abstract_pt", label: "Abstract (Portuguese)", widget: "markdown"}
       - {name: "publication_date", label: "Publication Date", widget: "datetime"}
       - {name: "published", label: "Published", widget: "boolean", default: true}
+      - {name: "link", label: "Link", widget: "string", required: false}
+      - {name: "kind", label: "Kind", widget: "select", options: ["Book", "Book Chapter", "Journal Article", "Magazine Article", "Newspaper Article", "Report", "Other"]}
 
   - name: "pages"
     label: "Pages"
@@ -38,6 +41,46 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
-      - {name: "title", label: "Title", widget: "string"}
+      - {name: "title_en", label: "Title (English)", widget: "string"}
+      - {name: "title_pt", label: "Title (Portuguese)", widget: "string"}
       - {name: "body_en", label: "Body (English)", widget: "markdown"}
       - {name: "body_pt", label: "Body (Portuguese)", widget: "markdown"}
+
+  - name: "people"
+    label: "People"
+    folder: "src/lib/posts/people"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: "slug", label: "Slug", widget: "string"}
+      - {name: "name", label: "Name", widget: "string"}
+      - {name: "title_en", label: "Title (English)", widget: "string"}
+      - {name: "title_pt", label: "Title (Portuguese)", widget: "string"}
+      - {name: "bio_en", label: "Bio (English)", widget: "markdown"}
+      - {name: "bio_pt", label: "Bio (Portuguese)", widget: "markdown"}
+      - {name: "image", label: "Image", widget: "image"}
+      - {name: "email", label: "Email", widget: "string", required: false}
+      - {name: "instagram", label: "Instagram", widget: "string", required: false}
+      - {name: "linkedin", label: "LinkedIn", widget: "string", required: false}
+      - {name: "website", label: "Website", widget: "string", required: false}
+      - {name: "publications", label: "Publications", widget: "relation", collection: "publications", multiple: true, value_field: "slug", search_fields: ["title_en", "title_pt"], required: false}
+      - {name: "programs", label: "Programs", widget: "relation", collection: "programs", multiple: true, value_field: "slug", search_fields: ["title_en", "title_pt"], required: false}
+
+  - name: "organizations"
+    label: "Organizations"
+    folder: "src/lib/posts/organizations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {name: "slug", label: "Slug", widget: "string"}
+      - {name: "name", label: "Name", widget: "string"}
+      - {name: "description_en", label: "Description (English)", widget: "markdown"}
+      - {name: "description_pt", label: "Description (Portuguese)", widget: "markdown"}
+      - {name: "image", label: "Image", widget: "image"}
+      - {name: "website", label: "Website", widget: "string"}
+      - {name: "twitter", label: "Twitter", widget: "string"}
+      - {name: "facebook", label: "Facebook", widget: "string"}
+      - {name: "instagram", label: "Instagram", widget: "string"}
+      - {name: "linkedin", label: "LinkedIn", widget: "string"}
+      - {name: "publications", label: "Publications", widget: "relation", collection: "publications", multiple: true, value_field: "slug", search_fields: ["title"]}
+      - {name: "programs", label: "Programs", widget: "relation", collection: "programs", multiple: true, value_field: "slug", search_fields: ["title"]}

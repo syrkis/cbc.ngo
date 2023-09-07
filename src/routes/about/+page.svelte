@@ -14,5 +14,5 @@
 </script>
 
 <div class="page1">
-    <Post content={pageData} />
+    <Post content={pageData}/>
 </div>

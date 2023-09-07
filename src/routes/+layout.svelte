@@ -1,6 +1,6 @@
 <script>
     import Header from "$lib/comps/Header.svelte";
-    /*import Footer from "$lib/comps/Footer.svelte";*/
+    import Footer from "$lib/comps/Footer.svelte";
     import { onMount, beforeUpdate } from "svelte";
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";
@@ -16,9 +16,9 @@
     beforeUpdate(() => {
         const handleScroll = (e) => {
             /** test we are not in home page, and that we have exactly one slash in page route id*/
-            if(contentElement.scrollTop <= 0 && $page.route.id !== "/" && $page.route.id.split("/").length === 2) {
+           /** if(contentElement.scrollTop <= 0 && $page.route.id !== "/" && $page.route.id.split("/").length === 2) {
                 goto("/");
-            }
+            }*/
         };
 
         if (contentElement) {
@@ -48,6 +48,9 @@
         width: 100%;
         transition: transform 0.5s ease-in-out; /* Add this transition */
         font-family: 'Cabin', sans-serif;
+        font-size: 1.1em;
+        line-height: 2;
+        text-align: justify;
     }
 
     :global(.page1) {

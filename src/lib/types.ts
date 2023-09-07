@@ -1,15 +1,17 @@
-export interface Project {
+export interface Program {
     slug: string;
     title: string;
+    title_en: string;
+    title_pt: string;
     description_en: string;
     description_pt: string;
-    review: string;
-    project_images: string[];
   }
   
   export interface Publication {
     slug: string;
     title: string;
+    title_en: string;
+    title_pt: string;
     abstract_en: string;
     abstract_pt: string;
     publication_date: string;
@@ -19,8 +21,11 @@ export interface Project {
   export interface Page {
     slug: string;
     title: string;
+    title_en: string;
+    title_pt: string;
+    body: string;
     body_en: string;
     body_pt: string;
   }
 
-  export type Post = Project | Publication | Page;
+  export type Post = Program | Publication | Page;

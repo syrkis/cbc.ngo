@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@sveltejs/adapter-netlify": "^2.0.8",
 		"front-matter": "^4.0.2",
+		"markdown-it": "^13.0.1",
 		"vanilla-tilt": "^1.8.1"
 	}
 }

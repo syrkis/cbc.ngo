@@ -3,7 +3,7 @@
     import { page } from '$app/stores';
     import { language, dictionary, setLang } from '$lib/stores';
 
-    let sites = ['about', 'projects', 'publications', 'contact'];
+    let sites = ['about', 'programs', 'publications', 'contact'];
 
     $: isTop = $page.route.id === '/';
 </script>
@@ -130,6 +130,7 @@
         font-size: 1.5rem;
         font-weight: bold;
         letter-spacing: 0.05em;
+        z-index: 10;
     }
 
     .language-switcher.bottom-black {

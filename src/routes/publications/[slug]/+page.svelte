@@ -1,5 +1,6 @@
 <script lang='ts'>
     import type { Page } from '$lib/types';
+    import Post from '$lib/comps/Post.svelte';
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
 
@@ -15,5 +16,5 @@
 </script>
 
 <div class="page1">
-    <h1>{JSON.stringify(pageData)}</h1>
+    <Post content={pageData} kind="page" />
 </div>
