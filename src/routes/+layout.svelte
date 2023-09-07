@@ -53,12 +53,25 @@
         text-align: justify;
     }
 
+    :global(.image-container) {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        z-index: 20; /* Add this line */
+    }
+
+    :global(.image-container img) {
+        width: 95vw;
+        height: auto;
+        z-index: 20; /* Add this line */
+    }
+
     :global(.page1) {
-        width: 800px;
         margin: auto;
         max-width: 95%;
     }
-
+    
     :global(body) {
         padding: 0;
         margin: 0;
