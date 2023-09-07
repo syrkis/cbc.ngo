@@ -59,11 +59,6 @@
 
 <style>
 
-    .icon {
-        width: 50px;
-        height: 50px;
-    }
-
 .nav-bg {
     background-color: #A3CC59;
     position: fixed;
@@ -209,7 +204,7 @@
             max-width: 100%;
             grid-template-rows: 1fr;
         }
-        .logo, img {
+        .logo-wrapper {
             display: none;
         }
     }
