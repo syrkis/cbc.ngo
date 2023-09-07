@@ -13,7 +13,7 @@ collections:
     slug: "{{slug}}"
     fields:
       - {name: "slug", label: "Slug", widget: "string"}
-      - {namke: "title_en", label: "Title (English)", widget: "string"}
+      - {name: "title_en", label: "Title (English)", widget: "string"}
       - {name: "title_pt", label: "Title (Portuguese)", widget: "string"}
       - {name: "description_en", label: "Description (English)", widget: "markdown"}
       - {name: "description_pt", label: "Description (Portuguese)", widget: "markdown"}
