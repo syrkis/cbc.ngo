@@ -1,5 +1,6 @@
 <script>
     import Header from "$lib/comps/Header.svelte";
+    /*import Footer from "$lib/comps/Footer.svelte";*/
     import { onMount, beforeUpdate } from "svelte";
     import { goto } from "$app/navigation";
     import { page } from "$app/stores";

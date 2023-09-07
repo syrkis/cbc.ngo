@@ -1,4 +1,5 @@
 <script lang='ts'>
+    import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
     import VanillaTilt from "vanilla-tilt";
     import { onMount } from "svelte";
@@ -32,33 +33,36 @@
             </div>
             <a href="/about">
                 <div class="logo-wrapper">
-                    <div class="logo">
-                        <img src="logo.svg" alt="Center for Brazilian Climate logo">
-                    </div>
+                    <Ring />
                 </div>
             </a>
         </div>
     </div>
 
-<div class="language-switcher">
+<div class="language-switcher" class:bottom-black={!isTop}>
     <a href="#" data-lang="en">en</a> | <a href="#" data-lang="pt">pt</a>
 </div>
 
 
 <div class="nav-bg" class:top={!isTop}>
     <div class="nav">
-    <div class="nav__links">
-        {#each sites as site, i}
-            <a href="/{site.toLowerCase()}">{site}</a>
-            {#if i < sites.length - 1}
-                <span class="separator">|</span>
-            {/if}
-        {/each}
+        <div class="nav__links">
+            {#each sites as site, i}
+                <a href="/{site.toLowerCase()}">{site}</a>
+                {#if i < sites.length - 1}
+                    <span class="separator">|</span>
+                {/if}
+            {/each}
+        </div>
     </div>
-</div>
 </div>
 
 <style>
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
 
 .nav-bg {
     background-color: #A3CC59;
@@ -78,14 +82,6 @@
         text-decoration: none;
     }
     
-
-img {
-        width: 75%;
-        height: auto;
-        margin: auto;
-    }
-
-
     h1 {
         letter-spacing: 0.05em;
         font-size: 1.5em;
@@ -124,11 +120,7 @@ img {
         margin: auto;
     }
 
-    .logo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
     .logo-wrapper {
         transition: transform 0.5s ease;
     }
@@ -151,6 +143,18 @@ img {
         font-weight: bold;
         letter-spacing: 0.05em;
     }
+
+    .language-switcher.bottom-black {
+        top: auto;
+        bottom: 0;
+        color: #A3CC59;
+    }
+    
+    /* Specific color for the draft inside the .bottom-black div */
+    .language-switcher.bottom-black a {
+        color: #A3CC59;
+    }
+
     
     .nav {
         line-height: 3em;
