@@ -1,15 +1,23 @@
-<div class="page1">
-    <h2>
-        Contact
-    </h2>
-    <div>
-        <h3>General Inquiries</h3>
-        <a href="mailto:info@cbc.ngo">info@cbc.ngo</a>
+<script lang='ts'>
+    /** this is the /about page. We will get the page content from /api/pages/about */
+    import type { Page } from '$lib/types';
+    import { onMount } from 'svelte';
+
+    export let pageData = {} as Page;
+
+    onMount(async () => {
+        const res = await fetch('/api/pages/contact');
+        pageData = await res.json();
+    });
+
+</script>
+
+{#await pageData}
+    <p>loading...</p>
+{:then pageData}
+    <div class="page1">
+        <h1>{pageData.title}</h1>
     </div>
-    <div class='address'>
-        <h3>Address</h3>
-    Av. José Silva de Azevedo Neto, 200 – Block 4, Room 104
-Barra da Tijuca, Zip Code: 22775-056 Rio de Janeiro – Brazil
-RJ – Brazil
-    </div>
-</div>
+{:catch error}
+    <p>error: {error.message}</p>
+{/await}

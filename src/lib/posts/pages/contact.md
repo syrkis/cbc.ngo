@@ -1,5 +1,5 @@
 ---
-title: About CentroClima
+title: Contact
 body_en: |
   ## About CentroClima
 

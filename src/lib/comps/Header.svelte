@@ -2,7 +2,7 @@
     import Ring from '$lib/comps/Ring.svelte';
     import { page } from '$app/stores';
 
-    let sites: string[] = ['About', 'Projects', 'Press', 'Contact'];
+    let sites: string[] = ['About', 'Projects', 'Publications', 'Contact'];
     let isTop = false;
 
     $: isTop = $page.route.id === '/';
