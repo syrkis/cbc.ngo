@@ -71,7 +71,7 @@
         margin: auto;
         max-width: 95%;
     }
-    
+
     :global(body) {
         padding: 0;
         margin: 0;
