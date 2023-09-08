@@ -12,7 +12,7 @@ body_en: |
   Established in 2000, our dedicated team of scientists, engineers, and policymakers has been at the forefront of environmental innovation, pioneering strategies that help communities adapt to changing climates and reshape their futures in a sustainable way.
 
 
-  ![](/images/screenshot-2023-09-02-at-20.48.06.png)
+  ![](/images/nature.png)
 
 
   Our belief is that knowledge is power; hence, we are committed to empowering individuals, communities, and governments with the information and tools they need to make informed decisions about climate action.

@@ -1,10 +1,8 @@
 <script>
     import Header from "$lib/comps/Header.svelte";
     import Footer from "$lib/comps/Footer.svelte";
-    import { onMount, beforeUpdate } from "svelte";
-    import { goto } from "$app/navigation";
+    import { beforeUpdate } from "svelte";
     import { page } from "$app/stores";
-
     let isTop = false;
 
     $: {
@@ -13,22 +11,6 @@
 
     let contentElement;
 
-    beforeUpdate(() => {
-        const handleScroll = (e) => {
-            /** test we are not in home page, and that we have exactly one slash in page route id*/
-           /** if(contentElement.scrollTop <= 0 && $page.route.id !== "/" && $page.route.id.split("/").length === 2) {
-                goto("/");
-            }*/
-        };
-
-        if (contentElement) {
-            contentElement.addEventListener("wheel", handleScroll);
-
-            return () => {
-                if(contentElement) contentElement.removeEventListener("wheel", handleScroll);
-            };
-        }
-    });
 </script>
 
 <div>
@@ -36,44 +18,41 @@
     <div class="content" bind:this={contentElement} class:slide-up={!isTop}>
         <slot></slot>
     </div>
+    <Footer />
 </div>
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400&display=swap');
 
-    :global(.content) {
-        margin-top: 10vh;
-        position: absolute;
-        width: 100%;
-        transition: transform 0.5s ease-in-out; /* Add this transition */
-        font-family: 'Cabin', sans-serif;
-        font-size: 1.1em;
-        line-height: 2;
-        text-align: justify;
-    }
-
+:global(.content) {
+    width: 100%;
+    transition: transform 0.5s ease-in-out; 
+    font-family: 'Cabin', sans-serif;
+    line-height: 2;
+    text-align: justify;
+    max-height: 80vh;
+    overflow-y: auto;
+}
     :global(.image-container) {
         position: relative;
         display: flex;
         justify-content: center;
         overflow: hidden;
         z-index: 20; /* Add this line */
+        border-radius: 3px;
+        padding: 100px;
     }
 
     :global(.image-container img) {
-        width: 95vw;
-        height: auto;
+        width: 80%;
+        height: 80%;
         z-index: 20; /* Add this line */
-    }
-
-    :global(.page1) {
-        margin: auto;
-        max-width: 95%;
     }
 
     :global(body) {
         padding: 0;
+        background-color: #A3CC59;
         margin: 0;
         line-height: 1.5;
         font-family: 'Crimson Pro', serif;
@@ -81,12 +60,13 @@
 
     /* Remove the transition from .content here */
     
-    :global(.container, .content) {
-        transform: translateY(0);
-    }
-
     :global(.container.hide, .content.slide-up) {
         transform: translateY(-100vh);
+    }
+
+    :global(a) {
+        color: black;
+        text-decoration: none;
     }
 
 </style>

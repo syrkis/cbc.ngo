@@ -15,14 +15,14 @@
 
 </script>
 
-{#await pageData}
-    <p>loading...</p>
-{:then pageData}
-    {#each pageData as page}
-        <a href="/publications/{page.slug}">
-            <div class="page1">
+<div class="container">
+    {#await pageData}
+        <p>loading...</p>
+    {:then pageData}
+        {#each pageData as page}
+            <a href="/publications/{page.slug}">
                 <Tile content={page} />
-            </div>
-        </a>
-    {/each}
-{/await}
+            </a>
+        {/each}
+    {/await}
+</div>

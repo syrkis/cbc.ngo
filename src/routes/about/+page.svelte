@@ -13,22 +13,6 @@
 
 </script>
 
-<div>
-    <div class="custom-div"></div>
+<div class="container">
     <Post content={pageData}/>
 </div>
-
-
-<style>
-    .custom-div {
-    width: 900px;
-    max-width: 95%;
-    margin: auto;
-    height: 300px;
-    background-image: url('images/grey.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 10px;
-}
-</style>

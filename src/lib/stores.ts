@@ -7,7 +7,7 @@ export const langs = {
         about: 'About',
         programs: 'Programs',
         publications: 'Publications',
-        contact: 'Contact',
+        press: 'Press',
         tagline: 'We foster informed dialogues and create strategic plans to combat climate change in Brazil through policy advocacy and community engagement.'
     },
     'pt': {
@@ -15,7 +15,7 @@ export const langs = {
         about: 'Sobre',
         programs: 'Programas',
         publications: 'Publicações',
-        contact: 'Contacto',
+        press: 'Imprensa',
         tagline: 'Estimulamos debates esclarecidos e criamos planos para combater as mudanças climáticas no Brasil via defesa política e interação comunitária.'
     }
 };
