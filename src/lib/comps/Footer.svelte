@@ -94,8 +94,13 @@
   margin-bottom: 5px;
 }
 
-.copyright {
-  grid-column-start: span 3;
-  text-align: center;
+@media (max-width: 800px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    font-size: 1em;
+  }
 }
+
+
 </style>
