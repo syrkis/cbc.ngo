@@ -12,12 +12,6 @@
 
 </script>
 
-{#await pageData}
-    <p>loading...</p>
-{:then pageData}
-    <div class="page1">
-        <h1>{pageData.title}</h1>
-    </div>
-{:catch error}
-    <p>error: {error.message}</p>
-{/await}
+<div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in odit a magni perspiciatis. Pariatur ducimus eligendi voluptatum repudiandae dicta distinctio beatae sunt. Accusamus aperiam maiores amet, sint quas ex.   
+</div>

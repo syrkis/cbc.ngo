@@ -15,27 +15,6 @@
 
 </script>
 
-<div class="container">
-  {#await pageData}
-      <p>loading...</p>
-  {:then pageData}
-      {#each pageData as page}
-          <a href="/programs/{page.slug}">
-              <Tile content={page} />
-          </a>
-      {/each}
-  {/await}
+<div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam in odit a magni perspiciatis. Pariatur ducimus eligendi voluptatum repudiandae dicta distinctio beatae sunt. Accusamus aperiam maiores amet, sint quas ex.   
 </div>
-
-<style>
-    /** use 1fr 1fr to make two columns*/
-
-    .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 20px;
-        padding: 0px;
-    }
-
-
-</style>

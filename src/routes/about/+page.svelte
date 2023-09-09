@@ -13,6 +13,6 @@
 
 </script>
 
-<div class="container">
+<div>
     <Post content={pageData}/>
 </div>

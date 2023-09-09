@@ -57,6 +57,7 @@
 </div>
 {/if}
 
+
 <style>
 .footer {
   margin-top: 30vh;
