@@ -165,10 +165,16 @@ h1 {
         letter-spacing: 0.05em;
     }
 
+    h1 {
+        font-size: 1.2em;
+        padding-bottom: 10vh;
+    }
+
     .main {
+        font-size: 1em;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
-        width: 100%;   /* Change from 500px to 100% */
+        width: 95%;   /* Change from 500px to 100% */
         max-width: 100%;
         display: flex;
         flex-direction: column;
@@ -176,18 +182,20 @@ h1 {
         align-items: center;  /* Align items in the center */
     }
 
-    .tagline {
-        order: 1; /* make tagline appear after logo visually */
-    }
-
     .logo-wrapper {
-        order: 2; /* make logo appear before tagline visually */
+        display: none;
     }
 
     .nav__links {
         width: 90%;
         justify-content: space-around;
         align-items: center;
+    }
+    .nav__links a {
+        font-size: 1em;
+    }
+    .language-switcher {
+        font-size: 1em;
     }
 }
 

@@ -1,12 +1,11 @@
 <script>
     import Header from "$lib/comps/Header.svelte";
     import Footer from "$lib/comps/Footer.svelte";
-    import { beforeUpdate } from "svelte";
     import { page } from "$app/stores";
     let isTop = false;
 
     $: {
-        isTop = $page.route.id === "/" || $page.route.id === "/pt";
+        isTop = $page.route.id === "/";
     }
 
     let contentElement;
