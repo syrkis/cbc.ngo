@@ -25,7 +25,7 @@
 <style>
     :global(.content-footer-wrapper) {
         transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
-        height: 100vh; 
+        height: 0vh;
     }
 
     :global(.content-footer-wrapper.slide-up) {

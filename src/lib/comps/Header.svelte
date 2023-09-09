@@ -87,14 +87,14 @@ h1 {
 .main {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    min-height: 100vh;  /* Change height to min-height */
+    height: 100vh;
+    overflow: hidden; /* Prevent scrolling inside this element */
     color: white;
     width: 800px;
-    max-width: 100%;
+    max-width: 95%;
     margin: auto;
     transition: transform 0.5s ease-in-out;
     align-items: center;
-    overflow: hidden;
 }
 
 
