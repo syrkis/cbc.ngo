@@ -17,32 +17,24 @@
             <slot></slot>
         </div>
         <Footer />
-    </div>
     <div class='black-bg'></div>
+    </div>
 </div>
 
 <style>
-
-    .black-bg {
-        position: relative;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        z-index: -1;
-        height: 20vh;
-    }
 
     .slide-up {
         margin-top: 20vh;
     }
     :global(.content-footer-wrapper) {
         transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
-        height: 100vh;
+        transform: translateY(0vh);
+        height: 0vh;
     }
 
     :global(.content-footer-wrapper.slide-up) {
         transform: translateY(-100vh);
-        height: 0vh; 
+        height: 100vh; 
     }
     @import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400&display=swap');
