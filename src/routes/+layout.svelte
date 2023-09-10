@@ -14,23 +14,30 @@
     <Header />
     <div class="content-footer-wrapper" class:slide-up={!isTop}>
         <div class="page">
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
             <slot></slot>
         </div>
         <Footer />
     </div>
+    <div class='black-bg'></div>
 </div>
 
 <style>
+
+    .black-bg {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        z-index: -1;
+        height: 20vh;
+    }
+
+    .slide-up {
+        margin-top: 20vh;
+    }
     :global(.content-footer-wrapper) {
         transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
-        height: 0vh;
+        height: 100vh;
     }
 
     :global(.content-footer-wrapper.slide-up) {
