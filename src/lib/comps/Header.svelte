@@ -25,7 +25,7 @@ language.subscribe(value => document.documentElement.lang = value);
     </div>
 </div>
 
-<div class="language-switcher">
+<div class="language-switcher" class:top={!isTop}>
     <a href="#" on:click|preventDefault={() => setLang('en')}>EN</a>
     |
     <a href="#" on:click|preventDefault={() => setLang('pt')}>PT</a>
@@ -126,6 +126,10 @@ h1 {
     font-size: 1.5rem;
     letter-spacing: 0.05em;
     z-index: 10;
+}
+
+.language-switcher.top {
+    position: absolute;
 }
 
 .nav {
