@@ -8,14 +8,19 @@
         isTop = $page.route.id === "/";
     }
 
-    let contentElement;
-
 </script>
 
 <div>
     <Header />
     <div class="content-footer-wrapper" class:slide-up={!isTop}>
-        <div class="page" bind:this={contentElement}>
+        <div class="page">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <slot></slot>
         </div>
         <Footer />
@@ -36,9 +41,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400&display=swap');
 
     :global(.page) {
-        padding-top: 5rem;
         margin: auto;
         width: 95%;
+        max-width: 800px;
         transition: transform 0.5s ease-in-out;
     }
 

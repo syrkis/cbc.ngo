@@ -57,10 +57,12 @@ a {
 h1 {
     letter-spacing: 0.05em;
     font-size: 1.5em;
+    font-weight: 400;
     margin: 0 0 1rem 0;
 }
 .container {
-    min-height: 100vh;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
     transform: translateY(0);
     transition: transform 0.5s ease-in-out;
@@ -71,7 +73,7 @@ h1 {
 }
 .nav-bg {
     background-color: var(--green);
-    position: fixed;
+    position: absolute;
     top: calc(100vh - 50px);
     width: 100%;
     transition: top 0.5s ease-in-out, width 0.5s ease-in-out;
@@ -122,7 +124,6 @@ h1 {
     right: 0;   
     padding: 1rem;
     font-size: 1.5rem;
-    font-weight: bold;
     letter-spacing: 0.05em;
     z-index: 10;
 }
@@ -145,7 +146,6 @@ h1 {
     color: white;
     text-decoration: none;
     font-size: 1.5rem;
-    font-weight: bold;
     letter-spacing: 0.05em;
 }
 
@@ -161,7 +161,7 @@ h1 {
     .separator {
         display: inline-block;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.2em;
         letter-spacing: 0.05em;
     }
 
@@ -193,9 +193,11 @@ h1 {
     }
     .nav__links a {
         font-size: 1em;
+        line-height: 2em;
     }
     .language-switcher {
         font-size: 1em;
+        line-height: 2em;
     }
 }
 
