@@ -1,6 +1,6 @@
 ---
 slug: decarbonizers
-cover: /images/projects/climate-reality.jpg
+cover: /images/tomoe-steineck-T1Wru10gKhg-unsplash.jpg
 title_en: Decarbonizers
 description_en: Connection, training and articulation of a climate leaders network
 body_en: |

@@ -60,7 +60,7 @@
 
 <style>
 .footer {
-  margin-top: 30vh;
+  /** margin-top: 30vh;*/
   width: 100%;
   color: white;
   bottom: 0;

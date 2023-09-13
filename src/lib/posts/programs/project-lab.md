@@ -1,6 +1,6 @@
 ---
 slug: project-lab
-cover: /images/projects/climate-reality.jpg
+cover: /images/chuttersnap-9G1kXjqOq4U-unsplash.jpg
 title_en: Project Lab
 description_en: Innovation and Transformation to implement decarbonizing initiatives
 body_en: |

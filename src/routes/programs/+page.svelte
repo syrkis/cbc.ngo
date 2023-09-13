@@ -20,7 +20,7 @@
   <!--<h1>{$dictionary['programs']}</h1>-->
   <div class="programs">
     {#each pageData as program}
-    <div class='program-wrapper'>
+    <div class='program-wrapper' style="background-image: url({program.cover});">
       <div class="program">
         <h2>{program['title_' + $language]}</h2>
         <p>{program['description_' + $language]}</p>
@@ -32,6 +32,18 @@
 </div>
 
 <style>
+
+  h2 {
+    font-size: 3em;
+    line-height: 3em;
+    font-weight: normal;
+    margin: 0;
+  }
+  p {
+    width: 350px;
+    line-height: 2em;
+    max-width: 95%;
+  }
   .container {
     text-align: center;
     color: white;
@@ -50,7 +62,7 @@
     font-weight: normal !important;
     font-size: large;
     height: 100%;
-    background-image: url('/images/chuttersnap-9G1kXjqOq4U-unsplash.jpg');
+    background-image: url({program.cover});
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

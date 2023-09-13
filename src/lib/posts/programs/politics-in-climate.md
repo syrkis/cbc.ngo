@@ -1,6 +1,6 @@
 ---
 slug: climate-politics
-cover: /images/projects/climate-reality.jpg
+cover: /images/corey-agopian-5y4ljzRrDFA-unsplash.jpg
 title_en: Climate Politics
 description_en: Creating public policies to ignite concrete actions to tackle the climate crisis
 body_en: |

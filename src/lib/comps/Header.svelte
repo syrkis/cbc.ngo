@@ -90,7 +90,7 @@ h1 {
     transform: translateY(-100vh);
 }
 .nav-bg {
-    background-color: var(--green);
+    /** background-color: var(--green); */
     position: absolute;
     top: calc(100vh - 50px);
     width: 100%;
@@ -101,7 +101,7 @@ h1 {
 .nav-bg.top {
     top: 0;
     padding: 1rem 0;
-    width: 80%;
+    width: 70%;
 }
 
 .nav-bg.background {

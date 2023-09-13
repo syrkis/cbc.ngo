@@ -1,6 +1,6 @@
 ---
 slug: cliamte-studies
-cover: /images/projects/climate-reality.jpg
+cover: /images/david-clode-xNSCi_K179c-unsplash.jpg
 title_en: Climate Studies
 description_en: Knowledge generation to help Brazil on the path towards climate neutrality
 body_en: |
