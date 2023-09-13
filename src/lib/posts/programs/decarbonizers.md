@@ -1,8 +1,8 @@
 ---
-slug: climate-reality
+slug: decarbonizers
 cover: /images/projects/climate-reality.jpg
-title_en: Climate Reality Project Brazil
-description_en: A network of governors committed to climate action.
+title_en: Decarbonizers
+description_en: Connection, training and articulation of a climate leaders network
 body_en: |
   ## About CentroClima
 
@@ -12,8 +12,8 @@ body_en: |
 
   Our belief is that knowledge is power; hence, we are committed to empowering individuals, communities, and governments with the information and tools they need to make informed decisions about climate action.
 
-title_pt: Climate Reality Project Brasil
-description_pt: Uma rede de governadores comprometidos com a ação climática.
+title_pt: Decarbonizers
+description_pt: Conexão, capacitação e articulação de uma rede de líderes climáticos
 body_pt: |
   ## Sobre CentroClima
 

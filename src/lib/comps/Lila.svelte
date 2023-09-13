@@ -1,12 +1,14 @@
 <script>
   import { fade } from 'svelte/transition';
   import { createEventDispatcher } from 'svelte';
+  import { language, dictionary, setLang } from '$lib/stores';
   import { tick } from 'svelte';
+  import { page } from '$app/stores';
 
   let dispatch = createEventDispatcher();
 
   let inputMessage = "";
-  let messages = ["Hi! I'm Lila, an AI based representation of CBC."];
+  let messages = [$dictionary['lila_intro']];
   let isBotTyping = false;
 
 
@@ -18,7 +20,7 @@
     const trimmedMessage = inputMessage.trim();
     if (trimmedMessage !== "") {
         messages = [...messages, `You: ${trimmedMessage}`];
-        messages = [...messages, "Bot: "]; // Bot's message will be filled gradually
+        messages = [...messages, "Lila: "]; // Bot's message will be filled gradually
         inputMessage = "";
         isBotTyping = true;
         await tick(); // Forces the UI to update and scroll to bottom
@@ -40,7 +42,9 @@
     {/each}
   </div>
   <div class="message-box">
-    <button class="close-button" on:click={closeBot}>X</button>
+    {#if $page.route.id != '/lila'}
+      <button class="close-button" on:click={closeBot}>X</button>
+    {/if}
     <input class="message-input"
            bind:value={inputMessage} 
            on:keydown={(e) => e.key === 'Enter' && handleSendMessage()} 
@@ -69,6 +73,7 @@
     height: 100%;
     backdrop-filter: blur(20px);
     transition: backdrop-filter 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.1);
     z-index: 10;
 }
 

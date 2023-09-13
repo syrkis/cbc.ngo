@@ -1,7 +1,7 @@
 <script lang='ts'>
-    import Bot from '$lib/comps/Bot.svelte';
+    import Lila from '$lib/comps/Lila.svelte';
 </script>
 
 <div class="container">
-    <Bot />
+    <Lila />
 </div>

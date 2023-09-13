@@ -3,7 +3,7 @@
     import { page } from '$app/stores';
     import { language, dictionary, setLang } from '$lib/stores';
     let sites = ['programs', 'publications', 'press', 'about'];
-    import Bot from '$lib/comps/Bot.svelte';
+    import Lila from '$lib/comps/Lila.svelte';
     $: isTop = $page.route.id === '/';
     $: showBot = false;
 </script>
@@ -28,14 +28,14 @@ language.subscribe(value => document.documentElement.lang = value);
 </div>
 
 <div class="language-switcher" class:top={!isTop}>
-    <a href="#" on:click|preventDefault={() => setLang('en')}>EN</a>
+    <a href="#" on:click|preventDefault={() => setLang('en')} class:top={!isTop}>EN</a>
     |
-    <a href="#" on:click|preventDefault={() => setLang('pt')}>PT</a>
+    <a href="#" on:click|preventDefault={() => setLang('pt')} class:top={!isTop}>PT</a>
 </div>
 
 <div class="nav-bg" class:top={!isTop}>
     <div class="nav">
-        <div class="nav__links">
+        <div class="nav__links" class:top={!isTop}>
             {#each sites as site, i}
                 <a href="/{site}">{$dictionary[site]}</a>
                 {#if i < sites.length - 1}
@@ -48,7 +48,7 @@ language.subscribe(value => document.documentElement.lang = value);
 
 {#if showBot}
   <div class="bot">
-    <Bot on:close={() => showBot = false} />
+    <Lila on:close={() => showBot = false} />
   </div>
 {/if}
 
@@ -69,6 +69,7 @@ language.subscribe(value => document.documentElement.lang = value);
 a {
     color: white;
     text-decoration: none;
+    transition: color 0.5s ease-in-out;
 }
 
 h1 {
@@ -132,6 +133,7 @@ h1 {
 
 .logo-wrapper:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 .language-switcher {
@@ -143,10 +145,16 @@ h1 {
     font-size: 1.5rem;
     letter-spacing: 0.05em;
     z-index: 10;
+    transition: color 0.5s ease-in-out;
 }
 
 .language-switcher.top {
     position: absolute;
+    color: black;
+}
+
+a.top {
+    color: black;
 }
 
 .nav {
@@ -164,10 +172,14 @@ h1 {
 }
 
 .nav__links a {
-    color: white;
     text-decoration: none;
     font-size: 1.5rem;
     letter-spacing: 0.05em;
+    transition: color 0.5s ease-in;
+}
+
+.nav__links.top a {
+    color: black !important;
 }
 
 .nav__links a:hover {

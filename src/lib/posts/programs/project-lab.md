@@ -1,8 +1,8 @@
 ---
-slug: climate-reality
+slug: project-lab
 cover: /images/projects/climate-reality.jpg
-title_en: Climate Reality Project Brazil
-description_en: A network of governors committed to climate action.
+title_en: Project Lab
+description_en: Innovation and Transformation to implement decarbonizing initiatives
 body_en: |
   ## About CentroClima
 
@@ -12,8 +12,8 @@ body_en: |
 
   Our belief is that knowledge is power; hence, we are committed to empowering individuals, communities, and governments with the information and tools they need to make informed decisions about climate action.
 
-title_pt: Climate Reality Project Brasil
-description_pt: Uma rede de governadores comprometidos com a ação climática.
+title_pt: Laboratório de Projetos
+description_pt: Inovação e Transformação para implementar iniciativas de descarbonização
 body_pt: |
   ## Sobre CentroClima
 

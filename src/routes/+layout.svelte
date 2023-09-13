@@ -11,6 +11,11 @@
 </script>
 
 <div>
+    {#if $page.route.id == '/lila'}
+    <div class="page">
+        <slot/>
+    </div>
+    {:else}
     <Header />
     <div class="content-footer-wrapper" class:slide-up={!isTop}>
         <div class="page">
@@ -19,7 +24,9 @@
         <Footer />
     <div class='black-bg'></div>
     </div>
+    {/if}
 </div>
+
 
 <style>
 
@@ -30,6 +37,7 @@
         transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
         transform: translateY(0vh);
         height: 0vh;
+        font-family: 'Cabin', sans-serif;
     }
 
     :global(.content-footer-wrapper.slide-up) {
