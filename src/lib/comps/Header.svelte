@@ -3,7 +3,9 @@
     import { page } from '$app/stores';
     import { language, dictionary, setLang } from '$lib/stores';
     let sites = ['programs', 'publications', 'press', 'about'];
+    import Bot from '$lib/comps/Bot.svelte';
     $: isTop = $page.route.id === '/';
+    $: showBot = false;
 </script>
 
 <svelte:head>
@@ -19,9 +21,9 @@ language.subscribe(value => document.documentElement.lang = value);
             <h1>{$dictionary['title']}</h1>
             <span>{$dictionary['tagline']}</span>
         </div>
-        <a href="/programs">
-            <div class="logo-wrapper"><Ring /></div>
-        </a>
+        <div class="logo-wrapper" on:click={() => showBot = true}>
+            <Ring />
+        </div>
     </div>
 </div>
 
@@ -44,7 +46,22 @@ language.subscribe(value => document.documentElement.lang = value);
     </div>
 </div>
 
+{#if showBot}
+  <div class="bot">
+    <Bot on:close={() => showBot = false} />
+  </div>
+{/if}
+
 <style>
+    .bot {
+        /** bot is a fullscreen and above everything*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 200;
+    }
  :root {
     --green: #A3CC59;
 }
