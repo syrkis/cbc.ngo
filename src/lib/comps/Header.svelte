@@ -33,7 +33,7 @@ language.subscribe(value => document.documentElement.lang = value);
     <a href="#" on:click|preventDefault={() => setLang('pt')} class:top={!isTop}>PT</a>
 </div>
 
-<div class="nav-bg" class:top={!isTop}>
+<div class="nav-bg" class:top={!isTop} class:background={$page.route.id === '/programs'}>
     <div class="nav">
         <div class="nav__links" class:top={!isTop}>
             {#each sites as site, i}
@@ -94,7 +94,7 @@ h1 {
     position: absolute;
     top: calc(100vh - 50px);
     width: 100%;
-    transition: top 0.5s ease-in-out, width 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out, width 0.5s ease-in-out, background-color 0.5s ease-in-out;
     z-index: 9; 
 }
 
@@ -102,6 +102,10 @@ h1 {
     top: 0;
     padding: 1rem 0;
     width: 80%;
+}
+
+.nav-bg.background {
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .main {
@@ -150,11 +154,11 @@ h1 {
 
 .language-switcher.top {
     position: absolute;
-    color: black;
+    color: white;
 }
 
 a.top {
-    color: black;
+    color: white;
 }
 
 .nav {
@@ -179,7 +183,7 @@ a.top {
 }
 
 .nav__links.top a {
-    color: black !important;
+    color: white;
 }
 
 .nav__links a:hover {

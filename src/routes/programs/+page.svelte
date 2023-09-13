@@ -17,14 +17,16 @@
 </script>
 
 <div class="container">
-  <h1>{$dictionary['programs']}</h1>
-  <p>Since 2015</p>
+  <!--<h1>{$dictionary['programs']}</h1>-->
   <div class="programs">
     {#each pageData as program}
+    <div class='program-wrapper'>
       <div class="program">
         <h2>{program['title_' + $language]}</h2>
         <p>{program['description_' + $language]}</p>
       </div>
+
+    </div>
     {/each }
   </div>
 </div>
@@ -32,7 +34,6 @@
 <style>
   .container {
     text-align: center;
-    padding: 1rem;
     color: white;
   }
 
@@ -43,21 +44,30 @@
   }
 
   .program {
-    flex: 0 1 calc(50% - 2rem);  /* flex-grow | flex-shrink | flex-basis */
-    margin: 1rem;
-    padding: 1rem;
-    border: 2px solid #fff;
-    box-sizing: border-box;
+    margin: auto;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: normal !important;
+    font-size: large;
+    height: 100%;
+    background-image: url('/images/chuttersnap-9G1kXjqOq4U-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.program h2,
+.program p {
+  margin: 0; 
+}
+  .program-wrapper {
+    height: 100vh;
+    width: 100vw;
+    padding: 0 0;
   }
 
-  @media (max-width: 800px) {
-    .program {
-      flex-basis: 100%;
-    }
-  }
-
-  /* Existing styles */
-  .program h1 {
-    font-size: 1.5rem;
-  }
 </style>

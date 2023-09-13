@@ -73,7 +73,7 @@
     height: 100%;
     backdrop-filter: blur(20px);
     transition: backdrop-filter 0.5s ease;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
     z-index: 10;
 }
 

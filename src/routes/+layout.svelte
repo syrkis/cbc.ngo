@@ -30,9 +30,6 @@
 
 <style>
 
-    .slide-up {
-        margin-top: 20vh;
-    }
     :global(.content-footer-wrapper) {
         transition: transform 0.5s ease-in-out, height 0.5s ease-in-out;
         transform: translateY(0vh);
@@ -49,8 +46,6 @@
 
     :global(.page) {
         margin: auto;
-        width: 95%;
-        max-width: 800px;
         transition: transform 0.5s ease-in-out;
     }
 
