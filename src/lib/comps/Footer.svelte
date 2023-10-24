@@ -40,7 +40,7 @@
 
 .footer {
   height: 70vh;
-  margin-top: calc(var(--nav-height) * 2);
+  /*margin-top: calc(var(--nav-height) * 2); */
   width: 100%;
   color: white;
   font-family: sans-serif;

@@ -4,21 +4,32 @@
 
     let pages = ['programs', 'publications', 'press', 'about'];
     $: atRoot = $page.route.id === '/';
+    let activePage = $page.route.id;
+    
 </script>
 
 
 <div class={atRoot ? '' : 'not-root'}>
     <ul class="nav">
-        {#each pages as page, i}
-            <li>
-                <a href="/{page}">{$dictionary[page]}</a>
-            </li>
+        {#each pages as page}
+          <li>
+            <a 
+              class:active={activePage.includes(page)}
+              href="/{page}"
+            >
+              {$dictionary[page]}
+            </a>
+          </li> 
         {/each}
-    </ul>
+      </ul>
 </div>
 
 
 <style>
+
+    .active {
+    text-decoration: underline;
+    }
 
     div {
         position: absolute;

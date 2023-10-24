@@ -6,7 +6,7 @@
     import Footer from "$lib/comps/Footer.svelte";
 
     $: atRoot = $page.route.id === '/';
-    $: contentStyle = atRoot ? 'top: 100vh;' : `top: 0vh;`;
+    $: contentStyle = atRoot ? 'top: calc(100vh - var(--nav-height));' : `top: 0`;
     $: landingStyle = atRoot ? 'top: 0vh;' : `top: -100vh;`;
 </script>
 
@@ -73,6 +73,5 @@
     div {
         height: 100vh;
         position: relative;
-        overflow: hidden; /* Prevent any spillover */
     }
 </style>
