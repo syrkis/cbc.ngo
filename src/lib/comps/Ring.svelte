@@ -23,15 +23,18 @@
 </div>
 
 <style>
-img {
-        width: 85%;
-        height: auto;
-        margin: auto;
-    }
-    .ring {
-        margin-left:  10%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+
+.ring {
+    height: 100%; /* Ensure the ring covers the full height available */
+    margin-left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 85%;
+    height: auto;
+    margin: auto;
+}
 </style>
