@@ -10,7 +10,8 @@
     $: landingStyle = atRoot ? 'top: 0vh;' : `top: -100vh;`;
 </script>
 
-<div>
+<!-- overflow hidden if on landing-->
+<div class:noscroll={atRoot}>
     <div class="header">
         <Language />
         <Navigation />
@@ -25,6 +26,11 @@
 </div>
 
 <style>
+
+.noscroll {
+  height: 100vh;
+  overflow: hidden;
+}
 
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400&display=swap');
 

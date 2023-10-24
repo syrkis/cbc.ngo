@@ -62,11 +62,11 @@
     }
 
     .not-root .nav li {
-        margin: 0 4vw;
+        margin: 0 6vw;
     }
 
     .not-root .nav {
-        padding-right: 42vw; /* Increase padding on the left when not at root */
+        padding-right: 30vw; /* Increase padding on the left when not at root */
     }
 
     .nav a {

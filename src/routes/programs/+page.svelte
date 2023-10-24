@@ -1,94 +1,103 @@
 <script>
   let programs = [
     {
-      title: "Program 1",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe vel a necessitatibus cumque, possimus sunt nesciunt sapiente numquam cum, aperiam sit magnam laudantium, assumenda ipsa animi?"
+      title: "Climate Politics",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe ",
+      logo: "/logo.svg"
     },
     {
-      title: "Program 2",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe vel a necessitatibus cumque, possimus sunt nesciunt sapiente numquam cum, aperiam sit magnam laudantium, assumenda ipsa animi?"
+      title: "Climate Studies",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe ",
+      logo: "/logo.svg"
     },
     {
-      title: "Program 3",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe vel a necessitatibus cumque, possimus sunt nesciunt sapiente numquam cum, aperiam sit magnam laudantium, assumenda ipsa animi?"
+      title: "Decarbonization",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe ",
+      logo: "/logo.svg"
     },
     {
-      title: "Program 4",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe vel a necessitatibus cumque, possimus sunt nesciunt sapiente numquam cum, aperiam sit magnam laudantium, assumenda ipsa animi?"
+      title: "Project Lab",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, amet? Inventore beatae saepe ",
+      logo: "/logo.svg"
+    },
+    {
+      title: "Analyzing Amazonia",
+      description: "Our ongoing and openended data scientific exploration of the Amazon. The projects main intention is to be educational.",
+      logo: "/logo.svg"
     },
   ]
 </script>
 
-<div>
-  <div class="header">
-      ————
-    <h2>
-      Programs
-    </h2>
-    <span>
-      Our programs are designed to help you get the most out of your time with us.
-    </span>
-  </div>
-  <div>
-  </div>
-  <div class="programs-grid">
-    {#each programs as program}
-      <div class="program">
-        <h3>{program.title}</h3>
-        <p>{program.description}</p>
-      </div>
-    {/each}
-  </div>
+<div class='container'>
+  <div class="programs">
+    <div class="programs-grid">
+      {#each programs as program}
+        <div class="program">
+          <h3>{program.title}</h3>
+          <p>{program.description}</p>
+          <div class="logo">
+            <img src={program.logo} alt="Center for Brazilian Climate logo">
+          </div>
+        </div>
+      {/each}
+    </div>
+</div>
+
 </div>
 
 <style>
 
-  h3 {
-    text-transform: uppercase;
-    font-size: 2em;
-    text-align: center;
+  .logo {
+    width: 100%;
+    max-width: 200px;
+    margin: auto;
   }
 
-  .program {
-    padding: 5vh 2vw;
-    font-size: 1.5em;
-    text-align: justify;
-    text-align-last: center;
+  img {
+    height: auto;
+    margin: auto;
   }
 
+.programs {
+  padding: 20vh 0;
+  width: 1200px;
+  max-width: 95%;
+  margin: auto;
+}
+
+
+.program {
+  font-size: 1.5em;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px; 
+}
+
+p {
+  text-align: justify;
+  text-align-last: center;
+}
+
+/* grid */
+/* Grid */
 .programs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 15vh;
+  grid-template-columns: 1fr 1fr;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1100px) {
   .programs-grid {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 600px) and (max-width: 1000px) {
-  .programs-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-} 
-
-@media (min-width: 1000px) {
-  .programs-grid {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
-h2{
-  font-size: 4em;
-  text-transform: uppercase;
-}
-.header {
-  background-color: var(--green);
-  text-align: center;
-}
-
-  div{
+  .container{
     background-color: var(--green);
     color: white;
   }

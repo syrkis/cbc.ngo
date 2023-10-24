@@ -24,7 +24,7 @@
         margin: 0 auto;
         background: var(--green);
         color: white;
-        width:800px;
+        width:900px;
         max-width: 100%;
         height: 100vh;
         display: flex;
